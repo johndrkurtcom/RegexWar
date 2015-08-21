@@ -23,7 +23,7 @@ var add = function(req, res, next) {
     console.log(req.user,'=================add q=================');
 
     User.findByIdAndUpdate(req.user._id, 
-      {$push: {submittedQuestions: {qNumber: 5, title: str.title} } },
+      {$push: {submittedQuestions: {qNumber: str.qNumber, title: str.title} } },
       {safe: true},
       function(err, user){
         if(err)
