@@ -29,7 +29,7 @@ var UserSchema = new mongoose.Schema({
       q_title: String
     }],
 
-  submittedQuestions: [{qNumder: {type: Number}, title: {type: String}}],
+  submittedQuestions: [{qNumber: {type: Number}, title: {type: String}}],
 
   // format is intended to be: { <qNumber>: "solution string", ...}
   // entries will only exist for a question that the user has solved.
