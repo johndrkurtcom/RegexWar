@@ -1,26 +1,26 @@
-module.export = function(grunt){
+module.exports = function(grunt){
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
     webpack: {
-      entry: "./client/src/app.jsx",
-      output: {
-        path: __dirname + "/client/build",
-        filename: "app.js"
-      },
-      module: {
-        loaders: [
-          { test: /\.jsx$/, loader: "jsx-loader" }
-        ]
+      app: {
+        entry: "./client/src/app.jsx",
+        output: {
+          path: __dirname + "/client/build",
+          filename: "app.js"
+        },
+        module: {
+          loaders: [
+            { test: /\.jsx$/, loader: "jsx-loader", exclude: './node_modules' }
+          ]
+        }
       }
-    },
+    }
 
   });
 
-  grunt.loadNpmTask('webpack');
-  grunt.loadNpmTask('webpack');
+  grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('build', function(n){
-    grunt.task.run(['webpack']);
-  });
+  grunt.registerTask('build', ['webpack']);
+  
 }
