@@ -7,7 +7,7 @@
     "start": "node server/server.js",
     "test": "mocha server/tests/serverSpec.js",
     "postinstall": "./node_modules/bower/bin/bower install",
-    "build": "webpack"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
