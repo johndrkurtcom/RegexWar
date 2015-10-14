@@ -33,3 +33,6 @@ client/src/lib
 client/build
 client/build/*.js
 client/build/app.js
+
+# config variables
+server/config/auth.js
